@@ -7,15 +7,34 @@
     <title>Document</title>
 </head>
 <body>
+    <% if(typeof nombre === 'undefined'){%>
     <h1>formularioooo</h1>
-    <form action="res.ejs" method="GET">
+    <form action="res.ejs" method="POST">
         <div>
-            <label for="campofruta">Su fruta preferida: </label>
-                <input type="text" id="campofruta" name="fruta">
+            <label for="campofruta">nombre: </label>
+                <input type="text" id="nombre" name="nombre">
+        </div>
+        <div>
+            <label for="campofruta">apellidos: </label>
+                <input type="text" id="apellidos" name="apellidos">
+        </div>
+        <div>
+            <label for="campofruta">eres hombre o mujer: </label>
+            <input type="radio" name="genero" value="hombre">
+            <input type="radio" name="genero" value="mujer">
         </div>
         <div>
             <button type="submit">Enviar</button>
         </div>
     </form>
+    <%}else{%>
+        <% if (nombre==""||apellidos=="") { %>
+            <h2>faltan campos</h2>
+        <% } else{ %>
+           <label for="">TU NOMBRE ES: </label><%= nombre %>
+           <label for="">TUS APELLIDOS SON: </label><%= apellidos %>
+           <label for="">tu genero es </label><%= genero %>
+           <%}%>
+    <%}  %>
 </body>
 </html>

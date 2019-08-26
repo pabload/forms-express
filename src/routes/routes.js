@@ -5,9 +5,9 @@ route.use(bodyParser.urlencoded({ extended: true }));
 route.get("/",function (req, res){
     res.render("form");
 });
-route.get("/res.ejs",function (req, res){
-    console.log(req.body);
-    res.render("res");
+route.post("/res.ejs",function (req, res){
+    console.log(req.body.fruta);
+    res.render("res",{ nombre: req.body.nombre, apellidos: req.body.apellidos, genero: req.body.genero});
 });
 
 module.exports = route;
