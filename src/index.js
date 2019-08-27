@@ -12,7 +12,7 @@ app.use(express.static(path.join(__dirname,"public")));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(require("./routes/routes.js"));
 
-app.listen(3000,function(){ 
-    console.log("server en puerto 3000");
+app.listen(4000,function(){ 
+    console.log("server en puerto 4000");
     console.log(path.join(__dirname,"public"))
 })

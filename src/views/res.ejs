@@ -7,12 +7,18 @@
     <title>Document</title>
 </head>
 <body> 
-        <% if (nombre==""||apellidos=="") { %>
+        <% if (nombre==""||apellidos==""||genero==null) { %>
             <h2>faltan campos</h2>
+            <form action="form.ejs">
+                <button type="submit">regresar</button>
+            </form>
         <% } else{ %>
            <label for="">TU NOMBRE ES: </label><%= nombre %>
            <label for="">TUS APELLIDOS SON: </label><%= apellidos %>
            <label for="">tu genero es </label><%= genero %>
+           <form action="form.ejs">
+            <button type="submit">regresar</button>
+        </form>
            <%}%>
 </body>
 </html>
